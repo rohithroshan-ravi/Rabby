@@ -42,7 +42,7 @@ import QRCode from 'qrcode.react';
 const Container = styled.div`
   width: 100%;
   height: 196px;
-  background: linear-gradient(0deg, #2539b7 0%, #2539b7 100%), #2539b7;
+  background: #002c15;
   position: relative;
   overflow: hidden;
   padding: 12px 16px;
