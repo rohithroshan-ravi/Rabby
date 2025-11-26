@@ -154,13 +154,8 @@ const main = () => {
   store.dispatch.app.initBizStore();
   store.dispatch.chains.init();
 
-  if (getUiType().isPop) {
-    wallet.tryOpenOrActiveUserGuide().then((opened) => {
-      if (opened) {
-        window.close();
-      }
-    });
-  }
+  // Onboarding flow is now handled within the popup by SortHat component
+  // which redirects to /welcome when wallet is not booted
 
   wallet.getLocale().then((locale) => {
     addResourceBundle(locale).then(() => {

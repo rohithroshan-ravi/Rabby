@@ -56,9 +56,10 @@ export const ForgotPassword = () => {
     if (hasUnencryptedKeyringData) {
       handleSetStep('reset-password');
     } else {
-      wallet.tryOpenOrActiveUserGuide();
+      // Navigate to the new user guide within the popup
+      history.push('/new-user/guide');
     }
-  }, [handleSetStep, hasUnencryptedKeyringData]);
+  }, [handleSetStep, hasUnencryptedKeyringData, history]);
   const onPasswordSubmit = React.useCallback(
     async (password: string) => {
       try {
@@ -76,7 +77,6 @@ export const ForgotPassword = () => {
 
   // This useEffect is used to close the window when the extension icon is clicked
   React.useEffect(() => {
-    wallet.tryOpenOrActiveUserGuide();
     const handleWindowClose = (request: any) => {
       if (request.type === 'pageOpened') {
         window.close();

@@ -489,14 +489,10 @@ function startEnableUser() {
   preferenceService.updateSendEnableTime(Date.now());
 }
 
-// On first install, open a new tab with Rabby
+// On first install, the onboarding flow is now handled within the popup
+// by the SortHat component which redirects to /welcome when wallet is not booted
 async function onInstall() {
-  const storeAlreadyExisted = await userGuideService.isStorageExisted();
-  // If the store doesn't exist, then this is the first time running this script,
-  // and is therefore an install
-  if (!storeAlreadyExisted) {
-    await userGuideService.openUserGuide();
-  }
+  // No longer opens a new tab - popup handles onboarding
 }
 
 if (isManifestV3) {
