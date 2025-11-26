@@ -5446,11 +5446,9 @@ export class WalletController extends BaseController {
   };
 
   tryOpenOrActiveUserGuide = async () => {
-    if (this.isBooted()) {
-      return false;
-    }
-    await userGuideService.activeUserGuide();
-    return true;
+    // Tab-opening logic removed - onboarding flow now renders within popup
+    // SortHat component handles redirecting to /welcome when wallet is not booted
+    return false;
   };
 
   uninstalledSyncStatus = uninstalledService.syncStatus;
