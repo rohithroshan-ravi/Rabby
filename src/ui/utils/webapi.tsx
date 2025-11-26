@@ -54,9 +54,9 @@ export const openInternalPageInTab = (
   needClose = true
 ) => {
   if (useWebapi) {
-    openInTab(`./popup.html#/${path}`, needClose);
+    openInTab(`./index.html#/${path}`, needClose);
   } else {
-    window.open(`./popup.html#/${path}`);
+    window.open(`./index.html#/${path}`);
   }
 };
 

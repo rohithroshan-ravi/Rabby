@@ -1628,7 +1628,7 @@ export class WalletController extends BaseController {
       ? await Browser.tabs.get(desktopTabId).catch(() => null)
       : null;
 
-    const url = `popup.html#/${_url.replace(/^\//, '')}`;
+    const url = `index.html#/${_url.replace(/^\//, '')}`;
     if (currentDesktopTab) {
       const tab = await Browser.tabs.update(currentDesktopTab.id, {
         active: true,

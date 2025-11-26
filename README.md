@@ -96,13 +96,17 @@ After `background` receives the message, it will use `providerController` to han
 
 ### `ui`
 
-Used by 2 pages which share the same JS code, but the HTML template is different for each respective purpose.
+Used by 3 pages which share the same JS code, but the HTML template is different for each respective purpose.
 
 1. `notification.html`
 
    Triggered by the dapp to request the user's permission.
 
-2. `popup.html`
+2. `index.html`
+
+   Opened in a browser tab for a better user interaction experience.
+
+3. `popup.html`
 
    Shown when the user clicks the extension icon to the right of the address bar.
 

@@ -17,7 +17,7 @@ export const SyncToMobile: React.FC<Props> = ({ children }) => {
   React.useEffect(() => {
     wallet.isUnlocked().then((isUnlocked) => {
       if (!isUnlocked) {
-        openInTab('popup.html#/unlock');
+        openInTab('index.html#/unlock');
       }
     });
   }, []);

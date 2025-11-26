@@ -20,7 +20,7 @@ class UserGuideService {
   openUserGuide = async () => {
     const tab = await browser.tabs.create({
       active: true,
-      url: './popup.html#/new-user/guide',
+      url: './index.html#/new-user/guide',
     });
     this.currentTabId = tab.id;
   };
@@ -31,7 +31,7 @@ class UserGuideService {
         const tab = await browser.tabs.get(this.currentTabId);
         if (
           !tab.url ||
-          tab.url.indexOf(browser.runtime.getURL('popup.html#/new-user/')) === 0
+          tab.url.indexOf(browser.runtime.getURL('index.html#/new-user/')) === 0
         ) {
           await browser.tabs.update(this.currentTabId, {
             active: true,
