@@ -34,9 +34,6 @@ import LogoCoboArgus, {
 import IconMnemonicWhiteRaw, {
   ReactComponent as RcIconMnemonicWhite,
 } from 'ui/assets/walletlogo/IconMnemonic-white.svg';
-import IconMnemonicDesktopWhite, {
-  ReactComponent as RcIconMnemonicDesktopWhite,
-} from 'ui/assets/walletlogo/IconMnemonic-desktop-white.svg';
 import IconWatchWhite, {
   ReactComponent as RcIconWatchWhite,
 } from 'ui/assets/walletlogo/IconWatch-white.svg';
@@ -127,9 +124,6 @@ import IconMetaMask, {
 import IconMnemonicInkRaw, {
   ReactComponent as RcIconMnemonicInk,
 } from 'ui/assets/walletlogo/mnemonic-ink.svg';
-import IconMnemonicDesktopInk, {
-  ReactComponent as RcIconMnemonicDesktopInk,
-} from 'ui/assets/walletlogo/mnemonic-desktop-ink.svg';
 import LogoMPCVault, {
   ReactComponent as RcLogoMPCVault,
 } from 'ui/assets/walletlogo/mpcvault.svg';
@@ -147,15 +141,9 @@ import {
 import IconPrivateKeyWhiteRaw, {
   ReactComponent as RcIconPrivateKeyWhite,
 } from 'ui/assets/walletlogo/private-key-white.svg';
-import IconPrivateKeyDesktopWhite, {
-  ReactComponent as RcIconPrivateKeyDesktopWhite,
-} from 'ui/assets/walletlogo/private-key-desktop-white.svg';
 import IconPrivateKeyInkRaw, {
   ReactComponent as RcIconPrivateKeyInk,
 } from 'ui/assets/walletlogo/privatekey-ink.svg';
-import IconPrivateKeyDesktopInk, {
-  ReactComponent as RcIconPrivateKeyDesktopInk,
-} from 'ui/assets/walletlogo/privatekey-desktop-ink.svg';
 import LogoPrivateKey, {
   ReactComponent as RcLogoPrivateKey,
 } from 'ui/assets/walletlogo/privatekeylogo.svg';
@@ -222,20 +210,12 @@ export { default as LANGS } from '../../_raw/locales/index.json';
 
 export { CHAINS, CHAINS_ENUM };
 
-const isDesktop =
-  typeof window !== 'undefined' && window.location.pathname === '/desktop.html';
-const IconPrivateKeyInk = isDesktop
-  ? IconPrivateKeyDesktopInk
-  : IconPrivateKeyInkRaw;
+const IconPrivateKeyInk = IconPrivateKeyInkRaw;
 
-const IconPrivateKeyWhite = isDesktop
-  ? IconPrivateKeyDesktopWhite
-  : IconPrivateKeyWhiteRaw;
+const IconPrivateKeyWhite = IconPrivateKeyWhiteRaw;
 
-const IconMnemonicInk = isDesktop ? IconMnemonicDesktopInk : IconMnemonicInkRaw;
-const IconMnemonicWhite = isDesktop
-  ? IconMnemonicDesktopWhite
-  : IconMnemonicWhiteRaw;
+const IconMnemonicInk = IconMnemonicInkRaw;
+const IconMnemonicWhite = IconMnemonicWhiteRaw;
 
 interface PortfolioChain extends Chain {
   isSupportHistory: boolean;

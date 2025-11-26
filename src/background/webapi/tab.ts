@@ -24,7 +24,7 @@ const createTab = async (url): Promise<number | undefined> => {
 };
 
 const openIndexPage = (route = ''): Promise<number | undefined> => {
-  const url = `index.html${route && `#${route}`}`;
+  const url = `popup.html${route && `#${route}`}`;
 
   return createTab(url);
 };

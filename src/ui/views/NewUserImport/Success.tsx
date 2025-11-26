@@ -214,7 +214,7 @@ export const ImportOrCreatedSuccess = () => {
     const oBrand = brand !== 'null' ? brand : undefined;
 
     window.open(
-      './index.html#/import/select-address' +
+      './popup.html#/import/select-address' +
         `?hd=${hd}&keyringId=${keyringId}&isNewUserImport=true&noRedirect=true${
           oBrand ? '&brand=' + oBrand : ''
         }`,
