@@ -364,7 +364,7 @@ const AddAddressOptions = () => {
               content: t('page.newAddress.createNewSeedPhrase'),
               brand: 'createAddress',
               onClick: () => {
-                handleRouter(() => openInternalPageInTab('mnemonics/create'));
+                handleRouter(() => history.push('mnemonics/create'));
               },
             },
           ]
@@ -374,7 +374,7 @@ const AddAddressOptions = () => {
               content: t('page.newAddress.createNewSeedPhrase'),
               brand: 'createAddress',
               onClick: () => {
-                handleRouter(() => openInternalPageInTab('mnemonics/create'));
+                handleRouter(() => history.push('mnemonics/create'));
               },
             },
           ],

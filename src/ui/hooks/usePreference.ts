@@ -50,7 +50,6 @@ function isFinalDarkMode(themeMode: DARK_MODE_TYPE, isDarkOnSystem: boolean) {
     return (
       userSelectedDark &&
       [
-        '#/mnemonics/create',
         '#/import/mnemonics',
 
         '#/import/select-address',

@@ -64,10 +64,10 @@ export const ImportSeedPhrase = () => {
   );
 
   // if is pop, redirect to dashboard
-  if (getUiType().isPop) {
-    history.replace('/dashboard');
-    return null;
-  }
+  // if (getUiType().isPop) {
+  //   history.replace('/dashboard');
+  //   return null;
+  // }
 
   useEffect(() => {
     (async () => {

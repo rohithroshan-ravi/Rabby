@@ -145,7 +145,6 @@ import { waitSignComponentAmounted } from '@/utils/signEvent';
 import pRetry from 'p-retry';
 import Browser from 'webextension-polyfill';
 import { hashSafeMessage } from '@safe-global/protocol-kit';
-import { userGuideService } from '../service/userGuide';
 import { metamaskModeService } from '../service/metamaskModeService';
 import { ga4 } from '@/utils/ga4';
 import { bgRetryTxMethods } from '../utils/errorTxRetry';
@@ -175,7 +174,6 @@ export class WalletController extends BaseController {
   /* wallet */
   boot = async (password) => {
     await keyringService.boot(password);
-    userGuideService.destroy();
     const hasOtherProvider = preferenceService.getHasOtherProvider();
     const isDefaultWallet = preferenceService.getIsDefaultWallet();
     if (!hasOtherProvider) {
@@ -5446,11 +5444,7 @@ export class WalletController extends BaseController {
   };
 
   tryOpenOrActiveUserGuide = async () => {
-    if (this.isBooted()) {
-      return false;
-    }
-    await userGuideService.activeUserGuide();
-    return true;
+    return false;
   };
 
   uninstalledSyncStatus = uninstalledService.syncStatus;

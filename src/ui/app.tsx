@@ -154,13 +154,13 @@ const main = () => {
   store.dispatch.app.initBizStore();
   store.dispatch.chains.init();
 
-  if (getUiType().isPop) {
-    wallet.tryOpenOrActiveUserGuide().then((opened) => {
-      if (opened) {
-        window.close();
-      }
-    });
-  }
+  // if (getUiType().isPop) {
+  //   wallet.tryOpenOrActiveUserGuide().then((opened) => {
+  //     if (opened) {
+  //       window.close();
+  //     }
+  //   });
+  // }
 
   wallet.getLocale().then((locale) => {
     addResourceBundle(locale).then(() => {

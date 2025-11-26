@@ -174,17 +174,13 @@ const Main = () => {
     <>
       <Route path="/" component={LogPageView} />
       <Switch>
-        <Route exact path="/welcome">
-          <Welcome />
+        <Route exact path="/new-user/guide">
+          <Guide />
         </Route>
 
         {/* todo remove */}
         <Route exact path="/sync">
           <SyncToMobile />
-        </Route>
-
-        <Route exact path="/new-user/guide">
-          <Guide />
         </Route>
 
         <Route exact path="/new-user/import-list">

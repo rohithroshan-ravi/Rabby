@@ -67,7 +67,7 @@ const Welcome = () => {
             className="bg-r-neutral-card2 w-[317px] h-[199px] mx-auto rounded-[10px]"
           />
           <footer className="mt-[64px]">
-            <Link to="/no-address" replace>
+            <Link to="/new-user/guide" replace>
               <Button type="primary" size="large" block>
                 {t('page.welcome.step2.btnText')}
               </Button>

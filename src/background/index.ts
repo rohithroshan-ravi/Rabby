@@ -52,7 +52,6 @@ import { customTestnetService } from './service/customTestnet';
 import { GasAccountServiceStore } from './service/gasAccount';
 import { testnetOpenapiService } from './service/openapi';
 import { syncChainService } from './service/syncChain';
-import { userGuideService } from './service/userGuide';
 import { isSameAddress } from './utils';
 import rpcCache from './utils/rpcCache';
 import { storage } from './webapi';
@@ -89,7 +88,6 @@ Sentry.init({
 });
 
 async function restoreAppState() {
-  await onInstall();
   const keyringState = await storage.get('keyringState');
   keyringService.loadStore(keyringState);
   keyringService.store.subscribe((value) => storage.set('keyringState', value));
@@ -148,10 +146,6 @@ async function restoreAppState() {
       startEnableUser();
       RPCService.syncDefaultRPC();
     }, 1 * 60 * 60 * 1000);
-  }
-
-  if (!keyringService.isBooted()) {
-    userGuideService.init();
   }
 
   eventBus.addEventListener(EVENTS_IN_BG.ON_TX_COMPLETED, ({ address }) => {
@@ -487,16 +481,6 @@ function startEnableUser() {
     event_category: 'User Enable',
   });
   preferenceService.updateSendEnableTime(Date.now());
-}
-
-// On first install, open a new tab with Rabby
-async function onInstall() {
-  const storeAlreadyExisted = await userGuideService.isStorageExisted();
-  // If the store doesn't exist, then this is the first time running this script,
-  // and is therefore an install
-  if (!storeAlreadyExisted) {
-    await userGuideService.openUserGuide();
-  }
 }
 
 if (isManifestV3) {

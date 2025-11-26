@@ -24,7 +24,7 @@ const SortHat = () => {
     }
 
     if (!(await wallet.isBooted())) {
-      setTo('/welcome');
+      setTo('/new-user/guide');
       return;
     }
 
